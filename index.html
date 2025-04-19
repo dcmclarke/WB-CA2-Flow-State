@@ -1,0 +1,188 @@
+<!-- Who coded what: All code done by Daniel Clarke (myself). I did this project solo. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flow State - Focus Timer</title>
+   <!-- Custom CSS: My own styles for the website. I used this to create a unique design and layout for my website. -->
+  <link rel="stylesheet" href="css/styles.css">
+  <!-- Google Fonts: Inter, Poppins and Lilita One --> <!-- https://fonts.google.com/selection/embed -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Special+Gothic+Condensed+One&display=swap" rel="stylesheet">
+  <!-- Font Awesome CDN
+   FontAwesome provides access to scalable vector icons that I used throughout my website - https://fontawesome.com/icons.
+   This external stylesheet gives me access to icons such as fa-solid fa-lock.
+   All icons on the website rely  on this single website.    -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"> <!-- https://cdnjs.com/libraries/font-awesome, this CDN link loads icon library from FontAwesome.com so no local files needed. --> 
+</head>
+
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="header-content">
+      <a href="index.html" class="logo-container">
+        <img src="images/cat-in-box.png" alt="Flow State Logo - Cat in Box" class="logo"> <!-- Logo: Cat in Box  I made using Canvas-->
+        <span class="logo-text">FLOW STATE</span>
+      </a>
+      <nav class="desktop-nav" id="desktop-nav">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="study.html" class="nav-link">Study</a>
+        <a href="game.html" class="nav-link">Game</a>
+        <a href="about.html" class="nav-link">About</a>
+      </nav>
+      <button class="mobile-menu-button" aria-expanded="false" aria-controls="desktop-nav">
+        <span class="sr-only">Menu</span>
+        <!-- Hamburger Menu Icon: Inline SVG displaying three horizontal lines as a mobile menu toggle button. It visually indicates the menu's presence and may transform into an "X" via mobilemenu.js when clicked.
+         The icon will improve mobile navigation usability by giving a familiar interface to access the nav links. -->
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- Timer Section -->
+    <section class="timer-section fade-in">
+      <div class="timer-content">
+        <h1 class="section-title">Pomodoro Focus Timer</h1>
+        <p class="section-lead">Boost productivity with timed focus sessions and breaks.</p>
+        <div class="session-track">
+          <span>Focus Sessions</span>
+          <span id="session-count">0 / 4</span>
+        </div>
+        <div class="timer-display" id="timer">25:00</div>
+        <div class="timer-modes">
+          <button class="timer-mode active" data-mode="focus">
+            <span>Focus</span>
+            <span class="timer-mode-duration">25 min</span>
+          </button>
+          <button class="timer-mode" data-mode="short-break">
+            <span>Short Break</span>
+            <span class="timer-mode-duration">5 min</span>
+          </button>
+          <button class="timer-mode" data-mode="long-break">
+            <span>Long Break</span>
+            <span class="timer-mode-duration">30 min</span>
+          </button>
+        </div>
+        <div class="timer-controls">
+          <button id="start-button" class="primary-button">Start Focus Timer</button>
+          <button id="sound-button" class="icon-button"><i class="fa-solid fa-volume-high"></i></button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Hero Section -->
+    <section class="hero-section fade-in">
+      <div class="hero-container">
+        <h2 class="hero-title">Get in the Flow with Flow State</h2>
+        <p class="hero-subtitle">Set the timer, crush your tasks, and track your progress with Flow State—now in app form!</p>
+        <div class="hero-image-container">
+          <img src="images/hero-image.png" alt="Flow State App Preview on Phone and Laptop"> <!-- Image I created in Figma -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials-section fade-in">
+      <div class="testimonials-container">
+        <h2 class="section-title">Trusted by Users Worldwide</h2>
+        <p class="section-lead">Join thousands who’ve boosted productivity with Flow State.</p>
+        <p class="testimonial-stats">
+          <span>4.8 Rating</span> • <span>65,000+ Users</span> • <span>95% Satisfaction</span>
+        </p>
+        <div class="testimonial-carousel">
+          <button class="carousel-arrow carousel-arrow-left" aria-label="Previous testimonial">
+            <i class="fa-solid fa-chevron-left"></i>
+          </button>
+          <div class="testimonial-cards">
+            <div class="testimonial-card">
+              <h3>Stay Focused, Ace Exams!</h3>
+              <p>The timer really keeps me on track for finals and the minigame is fun and the tips useful!.</p>
+              <div class="testimonial-author">
+                <img class="author-avatar" src="images/EmmaCollegeStudent.jpg" alt="Emma's profile picture"> <!-- All people faces and potraits generated using https://thispersondoesnotexist.com/ -->
+                <div class="author-info">
+                  <p class="author-name">Emma</p>
+                  <p class="author-role">College Student</p>
+                </div>
+              </div>
+            </div>
+            <div class="testimonial-card">
+              <h3>Perfect for Coding Sessions</h3>
+              <p>Flow State helps me code longer without burnout.</p>
+              <div class="testimonial-author">
+                <img class="author-avatar" src="images/LiamSoftwareDev.jpg" alt="Liam's profile picture"> <!-- All people faces and potraits generated using https://thispersondoesnotexist.com/ -->
+                <div class="author-info">
+                  <p class="author-name">Liam</p>
+                  <p class="author-role">Software Developer</p>
+                </div>
+              </div>
+            </div>
+            <div class="testimonial-card">
+              <h3>Boosted My Productivity</h3>
+              <p>Managing a company is easier with Flow State’s focus sessions. Simple yet usefu!</p>
+              <div class="testimonial-author">
+                <img class="author-avatar" src="images/MariaStartupCEO.jpg" alt="Maria's profile picture"> <!-- All people faces and potraits generated using https://thispersondoesnotexist.com/ -->
+                <div class="author-info">
+                  <p class="author-name">Maria</p>
+                  <p class="author-role">Startup CEO</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button class="carousel-arrow carousel-arrow-right" aria-label="Next testimonial">
+            <i class="fa-solid fa-chevron-right"></i>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features-section fade-in">
+      <div class="features-container">
+        <h2 class="section-title">Focus Management Features</h2>
+        <p class="section-lead">Track time, prioritize tasks, and stay sharp with Flow State.</p>
+        <div class="feature-cards">
+          <div class="feature-card">
+            <div class="feature-icon"><i class="fa-solid fa-clock"></i></div>
+            <h3>Focus Timer</h3>
+            <p>Use proven Pomodoro techniques to optimize your workflow and stay focused.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon"><i class="fa-solid fa-chart-simple"></i></div>
+            <h3>Smart Charts</h3>
+            <p>Visualize focus time and work patterns to identify trends and improve productivity.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon"><i class="fa-solid fa-lock"></i></div>
+            <h3>Secure Data</h3>
+            <p>Your sessions and tasks are safely stored, accessible anytime, anywhere.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="main-footer">
+    <div class="footer-content">
+      <div class="footer-logo">
+        <a href="index.html" class="logo-container">
+          <img src="images/cat-in-box.png" alt="Flow State Logo - Cat in Box" class="logo small">
+          <span class="logo-text">FLOW STATE</span>
+         </a>
+      <p class="copyright">© 2025 Flow State. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/index.js"></script>
+  <script src="js/mobilemenu.js"></script>
+</body>
+</html>

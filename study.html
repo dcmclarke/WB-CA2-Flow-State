@@ -1,0 +1,232 @@
+<!-- Who coded what: All code done by Daniel Clarke. I did this project solo. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flow State - Study Resources</title>
+  <!-- Bootstrap CSS CDN - Bootstrap: Powers the modal (#resourceModal) for resource details with centered positioning and button styling. -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+   <!-- Custom CSS: My own styles for the website. I used this to create a unique design and layout for my website. -->
+  <link rel="stylesheet" href="css/styles.css">
+  <!-- Google Fonts: Inter, Poppins and Lilita One --> <!-- https://fonts.google.com/selection/embed -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Special+Gothic+Condensed+One&display=swap" rel="stylesheet">
+  <!-- Font Awesome CDN
+   FontAwesome provides access to scalable vector icons that I used throughout my website - https://fontawesome.com/icons.
+   This external stylesheet gives me access to icons such as fa-solid fa-lock.
+   All icons on the website rely  on this single website.    -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"> <!-- https://cdnjs.com/libraries/font-awesome, this CDN link loads icon library from FontAwesome.com so no local files needed. --> 
+ </head>
+
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="header-content">
+      <a href="index.html" class="logo-container">
+        <img src="images/cat-in-box.png" alt="Flow State Logo - Cat in Box" class="logo"> <!-- Logo: Cat in Box  I made using Canvas-->
+        <span class="logo-text">FLOW STATE</span>
+      </a>
+      <nav class="desktop-nav" id="desktop-nav">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="study.html" class="nav-link">Study</a>
+        <a href="game.html" class="nav-link">Game</a>
+        <a href="about.html" class="nav-link">About</a>
+      </nav>
+      <button class="mobile-menu-button" aria-expanded="false" aria-controls="desktop-nav">
+        <span class="sr-only">Menu</span>
+        <!-- Hamburger Menu Icon: Inline SVG displaying three horizontal lines as a mobile menu toggle button. It visually indicates the menu's presence and may transform into an "X" via mobilemenu.js when clicked.
+         The icon will improve mobile navigation usability by giving a familiar interface to access the nav links. -->
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- Study Resources Section -->
+     <!-- Github, StackOverflow, Visual Studio Code, and LeetCode imgs are screenshots taken directly from each website's homepage -->
+    <section class="study-resources-section">
+      <div class="study-hero-container">
+        <h1 class="study-title fade-in">Study Resources</h1>
+        <!-- Gallery Integrated Here -->
+        <div class="gallery-grid fade-in">
+          <div class="gallery-card">
+            <img src="images/GithubResource.png" alt="GitHub Resource" class="gallery-image" data-bs-toggle="modal" data-bs-target="#resourceModal" data-info="GitHub: A platform for version control and collaboration. It’s essential for CS students to manage projects, contribute to open-source, and showcase their work to potential employers." data-link="https://github.com" loading="lazy">
+            <div class="gallery-content">
+              <h3 class="gallery-title">GitHub</h3>
+              <p class="gallery-description">A platform for version control and collaboration.</p>
+              <a href="#" class="gallery-link" data-bs-toggle="modal" data-bs-target="#resourceModal" data-info="GitHub: A platform for version control and collaboration. It’s essential for CS students to manage projects, contribute to open-source, and showcase their work to potential employers." data-link="https://github.com">Learn More <i class="fas fa-arrow-right"></i></a>
+            </div>
+          </div>
+          <div class="gallery-card">
+            <img src="images/StackOverflowResource.png" alt="Stack Overflow Resource" class="gallery-image" data-bs-toggle="modal" data-bs-target="#resourceModal" data-info="Stack Overflow: A Q&A platform for developers. It’s invaluable for CS students to find solutions to coding problems, learn best practices, and engage with a global community of programmers." data-link="https://stackoverflow.com" loading="lazy">
+            <div class="gallery-content">
+              <h3 class="gallery-title">Stack Overflow</h3>
+              <p class="gallery-description">A Q&A platform for developers to solve coding problems.</p>
+              <a href="#" class="gallery-link" data-bs-toggle="modal" data-bs-target="#resourceModal" data-info="Stack Overflow: A Q&A platform for developers. It’s invaluable for CS students to find solutions to coding problems, learn best practices, and engage with a global community of programmers." data-link="https://stackoverflow.com">Learn More <i class="fas fa-arrow-right"></i></a>
+            </div>
+          </div>
+          <div class="gallery-card">
+            <img src="images/VSCodeResource.png" alt="Visual Studio Code Resource" class="gallery-image" data-bs-toggle="modal" data-bs-target="#resourceModal" data-info="Visual Studio Code: A lightweight, powerful code editor. CS students benefit from its support for debugging, extensions, and customization, making it ideal for coding in multiple languages." data-link="https://code.visualstudio.com" loading="lazy">
+            <div class="gallery-content">
+              <h3 class="gallery-title">Visual Studio Code</h3>
+              <p class="gallery-description">A lightweight, powerful code editor for all languages.</p>
+              <a href="#" class="gallery-link" data-bs-toggle="modal" data-bs-target="#resourceModal" data-info="Visual Studio Code: A lightweight, powerful code editor. CS students benefit from its support for debugging, extensions, and customization, making it ideal for coding in multiple languages." data-link="https://code.visualstudio.com">Learn More <i class="fas fa-arrow-right"></i></a>
+            </div>
+          </div>
+          <div class="gallery-card">
+            <img src="images/LeetCodeResource.png" alt="LeetCode Resource" class="gallery-image" data-bs-toggle="modal" data-bs-target="#resourceModal" data-info="LeetCode: A platform for practicing coding problems. It’s perfect for CS students preparing for technical interviews, improving problem-solving skills, and mastering algorithms and data structures." data-link="https://leetcode.com" loading="lazy">
+            <div class="gallery-content">
+              <h3 class="gallery-title">LeetCode</h3>
+              <p class="gallery-description">Practice coding problems to prepare for interviews.</p>
+              <a href="#" class="gallery-link" data-bs-toggle="modal" data-bs-target="#resourceModal" data-info="LeetCode: A platform for practicing coding problems. It’s perfect for CS students preparing for technical interviews, improving problem-solving skills, and mastering algorithms and data structures." data-link="https://leetcode.com">Learn More <i class="fas fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bootstrap Modal for Resource Details -->
+    <div class="modal fade" id="resourceModal" tabindex="-1" aria-labelledby="resourceModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="resourceModalLabel">Resource Details</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <p id="modal-info"></p>
+            <a id="modal-link" href="#" target="_blank" class="btn btn-primary">Learn More</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Computer Science Study Section -->
+    <section class="cs-study-section">
+      <div class="cs-study-container">
+        <h2 class="section-title fade-in">Computer Science Study Guide</h2>
+        <p class="section-lead fade-in">Whether you're a beginner or diving deep into advanced topics, mastering Computer Science is all about consistent practice, strong fundamentals, and smart strategies. Here's your roadmap to success.</p>
+
+        <!-- How to Study CS Effectively -->
+        <div class="study-topic fade-in">
+          <div class="study-topic-header">
+            <h3 class="study-topic-title"><span class="study-icon"></span> How to Study CS Effectively</h3>
+          </div>
+          <div class="study-tips-grid">
+            <div class="study-tip-card">
+              <h4 class="tip-title">Start with the Core</h4>
+              <p class="tip-description">Build a rock-solid foundation in data structures, algorithms, and system architecture. Try books like <em>“Introduction to Algorithms”</em> (Cormen) or explore free courses from <a href="https://ocw.mit.edu" target="_blank">MIT OpenCourseWare</a>.</p>
+            </div>
+            <div class="study-tip-card">
+              <h4 class="tip-title">Practice with Purpose</h4>
+              <p class="tip-description">Code daily on platforms like <a href="https://leetcode.com" target="_blank">LeetCode</a> or <a href="https://hackerrank.com" target="_blank">HackerRank</a>. Even 30 focused minutes a day leads to massive long-term gains.</p>
+            </div>
+            <div class="study-tip-card">
+              <h4 class="tip-title">Break It Down</h4>
+              <p class="tip-description">Before diving into a problem, write out the steps in plain English or pseudocode. It helps reduce overwhelm and improves clarity.</p>
+            </div>
+            <div class="study-tip-card">
+              <h4 class="tip-title">Learn by Explaining</h4>
+              <p class="tip-description">Teach what you’ve learned—through blog posts, YouTube videos, or even to a friend. Teaching reveals what you truly understand.</p>
+            </div>
+            <div class="study-tip-card">
+              <h4 class="tip-title">Reflect + Debug</h4>
+              <p class="tip-description">Revisit your solutions. Can you make them cleaner or faster? Practice debugging by reading stack traces and stepping through your code.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Essential Tools for CS Students -->
+        <div class="study-topic fade-in">
+          <div class="study-topic-header">
+            <h3 class="study-topic-title"><span class="study-icon"></span> Essential Tools for CS Students</h3>
+          </div>
+          <div class="study-tools-grid">
+            <div class="tool-card">
+              <h4 class="tool-title">Visual Studio Code</h4>
+              <p class="tool-description">Lightweight, flexible, and packed with extensions (like Prettier, GitLens, and Python).</p>
+            </div>
+            <div class="tool-card">
+              <h4 class="tool-title">Git & GitHub</h4>
+              <p class="tool-description">Learn version control early. GitHub is not just for backups—it's your online portfolio.</p>
+            </div>
+            <div class="tool-card">
+              <h4 class="tool-title">Jupyter Notebook</h4>
+              <p class="tool-description">Perfect for learning Python, data science, and machine learning interactively.</p>
+            </div>
+            <div class="tool-card">
+              <h4 class="tool-title">Stack Overflow</h4>
+              <p class="tool-description">Think of it as your programmer’s Google. Chances are, someone’s had your problem—and solved it.</p>
+            </div>
+            <div class="tool-card">
+              <h4 class="tool-title">Debugger Tools</h4>
+              <p class="tool-description">Learn how to set breakpoints and inspect variables using tools in VS Code or IntelliJ.</p>
+            </div>
+            <div class="tool-card">
+              <h4 class="tool-title">VirtualBox or WSL</h4>
+              <p class="tool-description">Experiment with Linux environments and system-level tools in a safe sandbox.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Additional Tips for Success -->
+        <div class="study-topic fade-in">
+          <div class="study-topic-header">
+            <h3 class="study-topic-title"><span class="study-icon"></span> Additional Tips for Success</h3>
+          </div>
+          <div class="study-tips-grid">
+            <div class="study-tip-card">
+              <h4 class="tip-title">Build Real Projects</h4>
+              <p class="tip-description">Start small—a to-do list, a blog, or a mini game. Over time, aim for projects that challenge you and show off your skills.</p>
+            </div>
+            <div class="study-tip-card">
+              <h4 class="tip-title">Stay Organized</h4>
+              <p class="tip-description">Use <a href="https://www.notion.so" target="_blank">Notion</a>, <a href="https://trello.com" target="_blank">Trello</a>, or a simple Google Doc to plan your goals, keep track of bugs, and reflect on progress.</p>
+            </div>
+            <div class="study-tip-card">
+              <h4 class="tip-title">Find Your Tribe</h4>
+              <p class="tip-description">Join online communities like <a href="https://www.reddit.com/r/learnprogramming/" target="_blank">r/learnprogramming</a> or Discord study groups to ask questions and stay motivated.</p>
+            </div>
+            <div class="study-tip-card">
+              <h4 class="tip-title">Use the Pomodoro Technique</h4>
+              <p class="tip-description">25 minutes of deep work + 5-minute breaks. Want a break? Play something fun on our <a href="game.html">Game page</a> and come back refreshed.</p>
+            </div>
+            <div class="study-tip-card">
+              <h4 class="tip-title">Stay Curious</h4>
+              <p class="tip-description">Subscribe to a few tech YouTube channels (like <em>Fireship</em> or <em>Tech With Tim</em>), and follow newsletters like <a href="https://news.ycombinator.com" target="_blank">Hacker News</a> to stay in the loop.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="main-footer">
+    <div class="footer-content">
+      <div class="footer-logo">
+        <a href="index.html" class="logo-container">
+          <img src="images/cat-in-box.png" alt="Flow State Logo - Cat in Box" class="logo small">
+          <span class="logo-text">FLOW STATE</span>
+         </a>
+      <p class="copyright">© 2025 Flow State. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS and Popper.js -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+  <!-- jQuery CDN - jQuery: Updates modal content dynamically in study.js when clicking resource cards  -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="js/study.js"></script>
+  <script src="js/nav.js"></script>
+  <script src="js/mobilemenu.js"></script>
+</body>
+</html>
