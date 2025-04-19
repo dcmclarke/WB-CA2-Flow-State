@@ -7,15 +7,15 @@ document.addEventListener('DOMContentLoaded', () => {
     const toggleMenu = () => {
       const isExpanded = mobileMenuButton.getAttribute('aria-expanded') === 'true';
       mobileMenuButton.setAttribute('aria-expanded', !isExpanded);
-      desktopNav.classList.toggle('show-mobile');
+      if (isExpanded) {
+        desktopNav.classList.remove('show-mobile');
+      } else {
+        desktopNav.classList.add('show-mobile');
+      }
     };
 
-    // Handle both click and touchstart events
     mobileMenuButton.addEventListener('click', toggleMenu);
-    mobileMenuButton.addEventListener('touchstart', (e) => {
-      e.preventDefault(); // Prevent default touch behavior (e.g., scrolling)
-      toggleMenu();
-    });
+    mobileMenuButton.addEventListener('touchstart', toggleMenu);
   }
 
   // Fade-In Animation
